@@ -1,7 +1,7 @@
 
 language: ruby
 rvm:
-- 2.3.0
+- 2.5.3
 sudo: false
 script: bundle exec jekyll build && bundle exec rake deploy
 env:
