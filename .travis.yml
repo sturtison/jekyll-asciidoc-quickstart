@@ -6,7 +6,7 @@ script: bundle exec jekyll build && bundle exec rake deploy
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $JEKYLL_PAT  # Set in the settings page of your repository, as a secure variable
+  github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
   on:
     branch: main
