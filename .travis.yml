@@ -1,9 +1,12 @@
-
 language: ruby
 rvm:
 - 2.5.3
 sudo: false
 script: bundle exec jekyll build && bundle exec rake deploy
-env:
-  global:
-    secure: bvrrFqKQ6hZZD4f9HqoH4R7DXf1E5droFit90y4FMf8Xq8B+7FaWObHPXITH5H2Vhc3mKI1sACYeinQ4S4ySuC51WJi/vcreqXWf46nIZLVQctiMK7JckFjxeHzviGZuB7bMYHXHN48q5vbz1GKY+mHPo1wbbUjo4JU75AAuAW3JPv/wXAdYXPvC4icFQn8Ld6jFFehsoCLfKGAmM8VrrULKxdQUobQgxGC/hetSBTn7Q7ZcR/z0PXBO61/QgNOA4AiXPuEjhLoXYs9wlgBpxa4dJUgs7GswkbwfZC9Hekz2BYK9lKIgr/n00mFpHdf5pzofGOBToV90F3huNVTIAApImT/Ap1U3WkfWJl34Z8d/avqMGQ2z+1NAi5RWxN9fxKKVJ+tgIuxOn6j1uBGnl0Hu0koiLMthP0JDueu4Vkj9LaKjvCwGjZStsk4hd+O7WyOopac+3IEdxJ79V8LazLwYVid6P7Xfmjq5Th981f8Xt4o1d7CLxjTq6DhiMze5ZS0T4R6FqTiEzBZ/2/2OhBHnK8QoLSDflXAOHj8UwVhqFEoybpIirA5chYcFR4gToepsBaInzmJRLvTIwH4o3OIhNK56OeA7PyF/JIeoIUVZqp9j5RcTbAFvFBqlovONimC4TonBCWp+bxGeEDKB0uCjMdEidf0Xsd/q0n3K78E=
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $JEKYLL_PAT  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: main
